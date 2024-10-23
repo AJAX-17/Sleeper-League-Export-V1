@@ -1,1 +1,13 @@
 
+import requests
+import pandas as pd
+
+# Fetch data from API
+response = requests.get('YOUR_API_ENDPOINT')
+data = response.json()
+
+# Convert to DataFrame
+df = pd.DataFrame(data)
+
+# Save to Excel
+df.to_excel('fantasy_stats.xlsx', index=False)
